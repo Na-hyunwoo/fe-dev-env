@@ -2,6 +2,7 @@ const path = require("path");
 const webpack = require('webpack');
 const childProcess = require('child_process');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 
 module.exports = {
   mode: "development",
@@ -51,6 +52,7 @@ module.exports = {
         collapseWhitespace: true,
         removeComments: true
       } : false
-    })
+    }),
+    new CleanWebpackPlugin({}),
   ]
 }
